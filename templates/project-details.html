@@ -1,0 +1,112 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %}
+  <main class="main">
+    <!-- Page Title -->
+    <div class="page-title dark-background" style="background-image: url(assets/img/page-title-bg.jpg);">
+      <div class="container position-relative">
+        <h1>Loyiha tafsilotlari</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Uy</a></li>
+            <li class="current">Loyiha tafsilotlari</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Project Details Section -->
+    <section id="project-details" class="project-details section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="portfolio-details-slider swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "navigation": {
+                "nextEl": ".swiper-button-next",
+                "prevEl": ".swiper-button-prev"
+              },
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+            {% for i in rasm %}
+            <div class="swiper-slide">
+              <img src="{{i.rasm.url}}" alt="">
+            </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="row justify-content-between gy-4 mt-4">
+
+          <div class="col-lg-8" data-aos="fade-up">
+            <div class="portfolio-description">
+              <h2>{{this.nomi}}</h2>
+              <p>
+                {{this.text}}
+              </p>
+              <p>
+                {{this.text1}}
+              </p>
+
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>{{this.text2}}</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <div>
+                  <img src="{{this.rasm.url}}" class="testimonial-img" alt="">
+                  <h3>{{this.ism}}</h3>
+                  <h4>{{this.ish}}</h4>
+                </div>
+              </div>
+
+              <p>
+                {{this.text3}}
+              </p>
+
+              <p>
+                {{this.text4}}
+              </p>
+
+            </div>
+          </div>
+
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-info">
+              <h3>{{project.nomi}}</h3>
+              <ul>
+                <li><strong>{{project.nomi1}}</strong>{{project.ish}}</li>
+                <li><strong>{{project.nomi2}}</strong>{{project.ish1}}</li>
+                <li><strong>{{project.nomi3}}</strong>{{project.ish2}}</li>
+                <li><strong>{{project.nomi4}}</strong> <a href="#">{{project.ish3}}</a></li>
+                <li><a href="#" class="btn-visit align-self-start">{{project.tugma}}</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Project Details Section -->
+
+  </main>
+
+{% endblock content%}

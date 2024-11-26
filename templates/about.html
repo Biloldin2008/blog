@@ -1,0 +1,270 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %}
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" style="background-image: url(assets/img/page-title-bg.jpg);">
+      <div class="container position-relative">
+        <h1>Haqida</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Uy</a></li>
+            <li class="current">Haqida</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container">
+
+        <div class="row position-relative">
+
+          <div class="col-lg-7 about-img" data-aos="zoom-out" data-aos-delay="200"><img src="{{et.rasm.url}}"></div>
+
+          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="inner-title">{{et.nomi}}</h2>
+            <div class="our-story">
+              <h4>{{et.sana}}</h4>
+              <h3>{{et.nomi1}}</h3>
+              <p>{{et.text}}</p>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> <span>{{et.text1}}</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>{{et.text2}}</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>{{et.text3}}</span></li>
+              </ul>
+              <p>{{et.text4}}</p>
+
+              <div class="watch-video d-flex align-items-center position-relative">
+                <i class="bi bi-play-circle"></i>
+                <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox stretched-link">Watch Video</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Stats Counter Section -->
+    <section id="stats-counter" class="stats-counter section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>{{stat.nomi}}</h2>
+        <p>{{stat.text}}</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="{{stat.raqam}}" data-purecounter-duration="1" class="purecounter"></span>
+                <p>{{stat.name}}</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="{{stat.raqam1}}" data-purecounter-duration="1" class="purecounter"></span>
+                <p>{{stat.name1}}</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-headset color-green flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="{{stat.raqam2}}" data-purecounter-duration="1" class="purecounter"></span>
+                <p>{{stat.name2}}</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-people color-pink flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="{{stat.raqam3}}" data-purecounter-duration="1" class="purecounter"></span>
+                <p>{{stat.name3}}</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Counter Section -->
+
+    <!-- Alt Services Section -->
+    <section id="alt-services" class="alt-services section">
+
+      <div class="container">
+        {% for i in est %}
+        <div class="row justify-content-around gy-4">
+          <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100"><img src="{{i.rasm.url}}" alt=""></div>
+
+          <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <h3>{{i.nomi}}</h3>
+            <p>{{i.text}}</p>
+
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-easel flex-shrink-0"></i>
+              <div>
+                <h4><a href="" class="stretched-link">{{i.name}}</a></h4>
+                <p>{{i.text1}}</p>
+              </div>
+            </div><!-- End Icon Box -->
+
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-patch-check flex-shrink-0"></i>
+              <div>
+                <h4><a href="" class="stretched-link">{{i.name1}}</a></h4>
+                <p>{{i.text2}}</p>
+              </div>
+            </div><!-- End Icon Box -->
+
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="500">
+              <i class="bi bi-brightness-high flex-shrink-0"></i>
+              <div>
+                <h4><a href="" class="stretched-link">{{i.name2}}</a></h4>
+                <p>{{i.text3}}</p>
+              </div>
+            </div><!-- End Icon Box -->
+
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="600">
+              <i class="bi bi-brightness-high flex-shrink-0"></i>
+              <div>
+                <h4><a href="" class="stretched-link">{{i.name3}}</a></h4>
+                <p>{{i.text4}}</p>
+              </div>
+            </div><!-- End Icon Box -->
+
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </section><!-- /Alt Services Section -->
+
+    <!-- Alt Services 2 Section -->
+
+    </section><!-- /Alt Services 2 Section -->
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Jamoa</h2>
+        <p>Uning ehtiyojlari u qochishni istagan narsadan kelib chiqadi</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-5">
+          {% for i in team %}
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+            <div class="member-img">
+              <img src="{{i.rasm.url}}" class="img-fluid" alt="">
+              <div class="social">
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>{{i.ism}}</h4>
+              <span>{{i.ish}}</span>
+              <p>{{i.text}}</p>
+            </div>
+          </div><!-- End Team Member -->
+          {% endfor %}
+        </div>
+
+      </div>
+
+    </section><!-- /Team Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Guvohlar</h2>
+        <p>Uning ehtiyojlari u qochishni istagan narsadan kelib chiqadi</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 20
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+            {% for i in timon %}
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="{{i.rasm.url}}" class="testimonial-img" alt="">
+                  <h3>{{i.ism}}</h3>
+                  <h4>{{i.ish}}</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    <span>{{i.text}}</span>
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+            {% endfor %}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+  </main>
+{% endblock content%}
